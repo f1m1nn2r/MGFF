@@ -1,3 +1,70 @@
+@charset "UTF-8";
+/******************************
+공통 사항 해당 App.scss
+******************************/
+@font-face {
+  font-family: "Inter-Thin";
+  src: url("./font/Inter-Thin.ttf") format("truetype"), url("./font/Inter-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Inter-ExtraLight";
+  src: url("./font/Inter-ExtraLight.ttf") format("truetype"), url("./font/Inter-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Inter-Light";
+  src: url("./font/Inter-Light.ttf") format("truetype"), url("./font/Inter-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Inter-Regular";
+  src: url("./font/Inter-Regular.ttf") format("truetype"), url("./font/Inter-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Inter-Medium";
+  src: url("./font/Inter-Medium.ttf") format("truetype"), url("./font/Inter-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Inter-SemiBold";
+  src: url("./font/Inter-SemiBold.ttf") format("truetype"), url("./font/Inter-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("./font/Inter-Bold.ttf") format("truetype"), url("./font/Inter-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Inter-ExtraBold";
+  src: url("./font/Inter-ExtraBold.ttf") format("truetype"), url("./font/Inter-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Inter-Black";
+  src: url("./font/Inter-Black.ttf") format("truetype"), url("./font/Inter-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
 * {
   margin: 0;
   padding: 0;
@@ -12,4 +79,166 @@ ul, ol {
 a {
   text-decoration: none;
   color: #000;
+}
+
+.b-txt-5 {
+  font-size: calc(7vw - 10px);
+  font-weight: 500;
+  font-family: "Inter-Medium";
+  color: #000;
+}
+
+.sb-txt-4 {
+  font-size: 30px;
+  font-weight: 400;
+  font-family: "Inter-Regular";
+  color: #000;
+}
+
+.sb-txt-5 {
+  font-size: 30px;
+  font-weight: 500;
+  font-family: "Inter-Medium";
+  color: #000;
+}
+
+.m-txt-5 {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: "Inter-Medium";
+  color: #000;
+}
+
+.sm-txt-4 {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Inter-Regular";
+  color: #000;
+}
+
+.s-txt-4 {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Inter-Regular";
+  color: #000;
+}
+
+/****************************************************/
+.at-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 35px 45px;
+}
+.at-header-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.at-header-inner .menu-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 55px;
+     -moz-column-gap: 55px;
+          column-gap: 55px;
+}
+
+.at-footer-inner .album .foot-album-div {
+  width: 360px;
+  height: 360px;
+}
+
+.main-container .section01-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.main-container .section01-inner > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.main-container .section01-inner .rep-album img {
+  width: 100%;
+  height: 100%;
+}
+.main-container .section01-inner .rep-album-txt {
+  padding: 0 45px 45px 0;
+  text-align: right;
+}
+.main-container .section01-inner .rep-album-txt > div {
+  margin-bottom: 50px;
+}
+.main-container .section01-inner .rep-album-txt a {
+  width: 200px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  margin-right: 0;
+  border: 4px solid #000;
+  border-radius: 50%;
+}
+.main-container .section01-inner .rep-album-txt a span {
+  width: 0;
+  height: 0;
+  margin: 0 0 0 15px;
+  border-top: 30px solid transparent;
+  border-left: 50px solid #000;
+  border-bottom: 30px solid transparent;
+}
+.main-container .section02 {
+  padding: calc(7vw - 5px) 0;
+}
+.main-container .section02-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 45px;
+     -moz-column-gap: 45px;
+          column-gap: 45px;
+}
+.main-container .section02-inner img {
+  width: 100%;
+  height: 100%;
+}
+.main-container .section02-inner .etc-album-txt {
+  padding: 20px 0 25px;
+}
+.main-container .section02-inner .etc-album-txt .sm-txt-4 {
+  margin-top: 5px;
+}
+.main-container .section02-inner .etc-album-right {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 45px;
+     -moz-column-gap: 45px;
+          column-gap: 45px;
 }

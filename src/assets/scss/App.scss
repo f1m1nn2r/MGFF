@@ -1,7 +1,42 @@
-// 공통
+/******************************
+공통 사항 해당 App.scss
+******************************/
 $b:#000; 
+
+@import './common/font';
+$interM:'Inter-Medium';
+$interR:'Inter-Regular';
 
 *{margin:0; padding:0; box-sizing:border-box;}
 ul, ol{list-style:none;}
 a{text-decoration:none; color:$b;}
 
+@mixin conSize($wd:null, $hh:null, $lh:null){width:$wd; height:$hh; line-height:$lh;}
+@mixin displayFlex($ai:null, $jc:null, $ff:null){display:flex; align-items:$ai; justify-content:$jc; flex-flow:$ff;}
+@mixin font($fs:null, $fw:null, $ff:null, $color:null){font-size:$fs; font-weight:$fw; font-family:$ff; color:$color;}
+
+.b-txt-5{@include font(calc(7vw - 10px), 500, $interM, $b);}
+.sb-txt-4{@include font(30px, 400, $interR, $b);}
+.sb-txt-5{@include font(30px, 500, $interM, $b);}
+.m-txt-5{@include font(24px, 500, $interM, $b)}
+.sm-txt-4{@include font(20px, 400, $interR, $b)}
+.s-txt-4{@include font(16px, 400, $interR, $b)}
+
+/****************************************************/
+// 헤더
+.at-header{@include conSize(100%, null, null); position:fixed; top:0; left:0; padding:35px 45px;
+    &-inner{@include displayFlex(center, space-between, null);
+        .menu-ul{@include displayFlex(center, null, null); column-gap:55px;}
+    }
+}
+
+// 풋터
+.at-footer{
+    &-inner{
+        .album{
+            .foot-album-div{@include conSize(360px, 360px)}
+        }
+    }
+}
+
+@import './pages/MainPage';

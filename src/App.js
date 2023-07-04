@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 // components
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 // page
 import MainPage from './pages/MainPage.jsx';
@@ -23,6 +24,7 @@ function App() {
                 <Route path='/Tour' element={<TourPage/>}></Route>
                 <Route path='/Music' element={<MusicPage/>}></Route>
             </Routes>
+            <Footer/>
         </>  
     );
 }
