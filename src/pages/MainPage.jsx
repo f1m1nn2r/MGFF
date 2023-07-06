@@ -40,14 +40,16 @@ export default function MainPage(){
                             </div>
                         </div>
                         <ul className="etc-album-right">
-                            {EtcAlbum.map((album, index) => {
-                                return <li key={album.title}>
-                                            <div className="album-img-box"><img src={album.albumImg} alt={album.albumImg} /></div>
-                                            <div className="etc-album-txt">
-                                                <p className="m-txt-5">{album.title}</p>
-                                                <p className='sm-txt-4'>{album.date}</p>
-                                            </div>
-                                        </li>
+                            {EtcAlbum.map((album) => {
+                                return (
+                                    <li key={album.title}>
+                                        <div className="album-img-box"><img src={album.albumImg} alt={album.albumImg} /></div>
+                                        <div className="etc-album-txt">
+                                            <p className="m-txt-5">{album.title}</p>
+                                            <p className='sm-txt-4'>{album.date}</p>
+                                        </div>
+                                    </li>
+                                )
                             })}
                         </ul>
                     </div>

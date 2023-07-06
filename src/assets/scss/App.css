@@ -123,6 +123,19 @@ a {
   color: #000;
 }
 
+@supports (-webkit-text-stroke: 1px #fff) {
+  .footer-b-txt {
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    text-shadow: none;
+  }
+}
+@supports not (-webkit-text-stroke: 1px #fff) {
+  .footer-b-txt {
+    color: transparent;
+    text-shadow: -1px 0px #fff, 0px 1px #fff, 1px 0px #fff, 0px -1px #fff;
+  }
+}
 /****************************************************/
 .at-header {
   width: 100%;
@@ -154,9 +167,73 @@ a {
           column-gap: 55px;
 }
 
-.at-footer-inner .album .foot-album-div {
-  width: 360px;
-  height: 360px;
+.at-footer {
+  background: #000;
+}
+.at-footer-inner .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+.at-footer-inner .top .album {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.at-footer-inner .top .album .foot-album-div {
+  width: calc(19vw + 7px);
+  height: calc(19vw + 7px);
+}
+.at-footer-inner .top .footer-b-txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: calc(50% - 2vw);
+  font-size: calc(46vw - 4px);
+  font-weight: 500;
+  font-family: "Inter-Medium";
+  letter-spacing: -5vw;
+}
+.at-footer-inner .bott {
+  padding: 45px;
+}
+.at-footer-inner .bott li {
+  margin-bottom: 13px;
+}
+.at-footer-inner .bott li a, .at-footer-inner .bott li p {
+  line-height: 1;
+  color: #fff;
+}
+.at-footer-inner .bott li a span, .at-footer-inner .bott li p span {
+  font-weight: bold;
+  font-family: "Inter-Bold";
+}
+.at-footer-inner .bott li:last-child {
+  margin-bottom: 0;
+}
+.at-footer-inner .bott .sns {
+  padding: 0 0 45px 0;
+}
+.at-footer-inner .bott .sns li {
+  letter-spacing: 7px;
+}
+.at-footer-inner .bott .link-etc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.at-footer-inner .bott .link-etc ul:last-child {
+  text-align: right;
 }
 
 .main-container .section01-inner {

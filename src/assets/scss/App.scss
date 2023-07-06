@@ -2,10 +2,14 @@
 공통 사항 해당 App.scss
 ******************************/
 $b:#000; 
+$f:#fff;
+
+
 
 @import './common/font';
 $interM:'Inter-Medium';
 $interR:'Inter-Regular';
+$interB:'Inter-Bold';
 
 *{margin:0; padding:0; box-sizing:border-box;}
 ul, ol{list-style:none;}
@@ -14,6 +18,7 @@ a{text-decoration:none; color:$b;}
 @mixin conSize($wd:null, $hh:null, $lh:null){width:$wd; height:$hh; line-height:$lh;}
 @mixin displayFlex($ai:null, $jc:null, $ff:null){display:flex; align-items:$ai; justify-content:$jc; flex-flow:$ff;}
 @mixin font($fs:null, $fw:null, $ff:null, $color:null){font-size:$fs; font-weight:$fw; font-family:$ff; color:$color;}
+@mixin center(){position:absolute; top:50%; left:50%; transform:translate(-50%,-50%)}
 
 .b-txt-5{@include font(calc(7vw - 10px), 500, $interM, $b);}
 .sb-txt-4{@include font(30px, 400, $interR, $b);}
@@ -21,6 +26,13 @@ a{text-decoration:none; color:$b;}
 .m-txt-5{@include font(24px, 500, $interM, $b)}
 .sm-txt-4{@include font(20px, 400, $interR, $b)}
 .s-txt-4{@include font(16px, 400, $interR, $b)}
+
+@supports(-webkit-text-stroke:1px $f){
+    .footer-b-txt{color:transparent; -webkit-text-stroke:1px $f; text-shadow:none;}
+}
+@supports not(-webkit-text-stroke:1px $f){
+    .footer-b-txt{color:transparent; text-shadow:-1px 0px $f, 0px 1px $f, 1px 0px $f, 0px -1px $f;}
+}
 
 /****************************************************/
 // 헤더
@@ -31,10 +43,29 @@ a{text-decoration:none; color:$b;}
 }
 
 // 풋터
-.at-footer{
+.at-footer{background:$b; 
     &-inner{
-        .album{
-            .foot-album-div{@include conSize(360px, 360px)}
+        .top{@include displayFlex(null, null, null); position:relative; overflow:hidden;
+            .album{display:grid; grid-template-columns:repeat(3,1fr); gap:8px;
+                .foot-album-div{@include conSize(calc(19vw + 7px), calc(19vw + 7px))}
+            }
+            .footer-b-txt{@include center; left:calc(50% - 2vw); @include font(calc(46vw - 4px), 500, $interM, null); letter-spacing:-5vw}
+        }
+        .bott{padding:45px;
+            li{margin-bottom:13px;
+                a, p{line-height:1; color:$f;
+                    span{@include font(null, bold, $interB, null);}
+                }
+                &:last-child{margin-bottom:0;}
+            }
+            .sns{padding:0 0 45px 0;
+                li{letter-spacing:7px}
+            }
+            .link-etc{@include displayFlex(flex-end, space-between, null);
+                ul{
+                    &:last-child{text-align:right}
+                }
+            }
         }
     }
 }
